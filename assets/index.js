@@ -48,7 +48,10 @@ permissionMap.set(
 //chech?
 //function chechPermission(action, role) {
 function checkPermission(action, role) {
-    return permissionMap.get(action).includes(role);
+    if(permissionMap.has(action)){
+        return permissionMap.get(action).includes(role);
+    }
+    return false;
 }
 
 
